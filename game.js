@@ -41,12 +41,20 @@ function animatePress(currentColour) {
 
 
 $(document).on("keypress", function() {
+    funcStarted();
+});
+
+$(document).on("click", function() {
+    funcStarted();
+});
+
+function funcStarted() {
     if (!started) {
         $("h1").text("level " + level);
         nextSequence();
         started = true;
     }
-});
+}
 
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
